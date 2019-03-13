@@ -1,6 +1,7 @@
 # Distribution
 dist/*
 docs/*
+storybook-static/*
 
 # WebStorm
 .idea/*
