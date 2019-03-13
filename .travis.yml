@@ -1,0 +1,16 @@
+language: node_js
+sudo: false
+node_js:
+  - 10
+install:
+  - npm install
+script:
+- npm run build-storybook
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: storybook-static
+  on:
+    branch: master
