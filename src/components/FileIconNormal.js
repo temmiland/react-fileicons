@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 const FileIconNormal = styled.div`
-  position: absolute;
+  position: relative;
+  margin: 5px;
   width: 100px;
   height: 135px;
   border-radius: 8px;
@@ -26,7 +27,7 @@ const FileIconNormal = styled.div`
     font-size: 24px;
     font-weight: 500;
     color: #fff;
-    content: "${props => props.extension}"
+    content: "${props => props.extension.substring(0, 5)}"
   }
 `;
 
