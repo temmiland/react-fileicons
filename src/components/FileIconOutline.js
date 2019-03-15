@@ -11,7 +11,7 @@ const FileIconOutline = styled(FileIconNormal)`
       &:before {
         top: -3px;
         right: -3px;
-        border-color: #fff #fff #1E88E5 #1E88E5;
+        border-color: #fff #fff ${props.colorScheme.primary} ${props.colorScheme.secondary};
         border-width: 18px;
       }
       
