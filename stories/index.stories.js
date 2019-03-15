@@ -14,7 +14,7 @@ storiesOf('FileIcon', module)
       <div>
         <FileIcon extension={extension} colorScheme={color} small />
         <FileIcon extension={extension} colorScheme={color} medium />
-        <FileIcon extension={extension} colorScheme={color} large />
+        <FileIcon extension={extension} colorScheme={color} />
       </div>
     );
   })
@@ -26,7 +26,7 @@ storiesOf('FileIcon', module)
       <div>
         <FileIcon extension={extension} colorScheme={color} linearGradient small />
         <FileIcon extension={extension} colorScheme={color} linearGradient medium />
-        <FileIcon extension={extension} colorScheme={color} linearGradient large />
+        <FileIcon extension={extension} colorScheme={color} linearGradient />
       </div>
     );
   })
@@ -38,7 +38,7 @@ storiesOf('FileIcon', module)
       <div>
         <FileIcon extension={extension} colorScheme={color} outline small />
         <FileIcon extension={extension} colorScheme={color} outline medium />
-        <FileIcon extension={extension} colorScheme={color} outline large />
+        <FileIcon extension={extension} colorScheme={color} outline />
       </div>
     );
   });
