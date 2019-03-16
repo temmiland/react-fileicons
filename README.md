@@ -11,7 +11,7 @@ You can reach the Storybook [here](https://tomxpcvx.github.io/react-fileicons/).
 First you should import the needed files.
 
 ```
-import FileIcon, { ColorSchema } from 'react-fileicons';
+import FileIcon, { ColorScheme } from 'react-fileicons';
 ```
 
 After that you can use the FileIcon component. 
