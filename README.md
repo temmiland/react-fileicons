@@ -10,38 +10,38 @@ You can reach the Storybook [here](https://tomxpcvx.github.io/react-fileicons/).
 
 First you should import the needed files.
 
-```
+```javascript
 import FileIcon, { ColorScheme } from 'react-fileicons';
 ```
 
-After that you can use the FileIcon component. 
-To change the color of the component, you can use the built-in color list ```ColorScheme```. 
+After that you can use the FileIcon component.
+To change the color of the component, you can use the built-in color list ```ColorScheme```.
 
-```
+```javascript
 <FileIcon extension="doc" colorScheme={ColorScheme.red} />
 ```
 
 Alternatively, you can use your own color configurations. However, these must be in the following format.
 
-```
+```javascript
 <FileIcon extension="doc" colorScheme={{primary: '#1E88E5', secondary: '#1976D2'}} />
 ```
 
 The following options can be used to access different designs:
 
-```
+```text
 <FileIcon
     extension="doc"                 # only the first 5 characters are displayed
     colorScheme={ColorScheme.red}   # must be in the above format
-    linearGradient                  # switches the component to the gradient design   
-    outline                         # switches the component to the outline design   
-    small                           # activates the small design   
-    medium                          # activates the medium design   
+    linearGradient                  # switches the component to the gradient design
+    outline                         # switches the component to the outline design
+    small                           # activates the small design
+    medium                          # activates the medium design
 />
 ```
 
-Properties of the designs should only be used in the combination size and type. 
-If you use ```small``` and ```medium``` at the same time, ```medium``` overwrites ```small```. 
+Properties of the designs should only be used in the combination size and type.
+If you use ```small``` and ```medium``` at the same time, ```medium``` overwrites ```small```.
 If you use ```outline``` and ```linearGradient``` at the same time, ```outline``` overwrites ```linearGradient```.
 
 ## Known issues
