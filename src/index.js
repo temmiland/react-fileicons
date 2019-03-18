@@ -16,14 +16,22 @@ class FileIcon extends React.PureComponent {
 
 FileIcon.defaultProps = {
   linearGradient: false,
-  outline: false
+  outline: false,
+  smallest: false,
+  small: false,
+  medium: false,
+  background: '#fff'
 };
 
 FileIcon.propTypes = {
   extension: PropTypes.string.isRequired,
   colorScheme: PropTypes.shape({ primary: PropTypes.string.isRequired, secondary: PropTypes.string.isRequired }).isRequired,
   linearGradient: PropTypes.bool,
-  outline: PropTypes.bool
+  outline: PropTypes.bool,
+  smallest: PropTypes.bool,
+  small: PropTypes.bool,
+  medium: PropTypes.bool,
+  background: PropTypes.string
 };
 
 export {
