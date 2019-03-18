@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 const FileIconNormal = styled.div`
   position: relative;
-  margin: 5px;
+  margin: 5px auto;
   width: 100px;
   height: 140px;
   border-radius: 8px;
@@ -11,6 +11,13 @@ const FileIconNormal = styled.div`
   font-size: 24px;
   font-weight: 500;
   color: #fff;
+  
+  ${props => props.smallest && css`
+    width: 35px;
+    height: 46px;
+    border-radius: 4px;
+    font-size: 13px;
+  `}
   
   ${props => props.small && css`
     width: 50px;
@@ -33,8 +40,13 @@ const FileIconNormal = styled.div`
     border-width: 16px;
     border-bottom-left-radius: 8px;
     border-style: solid;
-    border-color: #fff #fff rgba(255,255,255,.30) rgba(255,255,255,.30);
+    border-color: ${props => props.background} ${props => props.background} rgba(255,255,255,.30) rgba(255,255,255,.30);
     content: "";
+    
+    ${props => props.smallest && css`
+      border-width: 6px;
+      border-bottom-left-radius: 4px;
+    `}
     
     ${props => props.small && css`
       border-width: 8px;
@@ -52,7 +64,12 @@ const FileIconNormal = styled.div`
     position: absolute;
     bottom: 10px;
     left: 10px;
-    content: "${props => props.extension.substring(0, 5)}"
+    content: "${props => props.extension.substring(0, 5)}";
+    
+    ${props => props.smallest && css`
+        left: 6px; 
+        bottom: 6px;
+    `}
   }
 `;
 
