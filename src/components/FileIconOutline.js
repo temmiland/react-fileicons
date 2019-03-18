@@ -7,6 +7,13 @@ const FileIconOutline = styled(FileIconNormal)`
     background: none;
     border: 3px solid ${props => props.colorScheme.primary};
     
+    ${props => props.smallest && css`
+      width: 31px;
+      height: 42px;
+      border-radius: 4px;
+      font-size: 13px;
+    `}
+    
     ${props => props.small && css`
       width: 46px;
       height: 66px;
@@ -22,8 +29,13 @@ const FileIconOutline = styled(FileIconNormal)`
     &:before {
       top: -3px;
       right: -3px;
-      border-color: #fff #fff ${props => props.colorScheme.primary} ${props => props.colorScheme.secondary};
+      border-color: ${props => props.background} ${props => props.background} ${props => props.colorScheme.primary} ${props => props.colorScheme.secondary};
       border-width: 18px;
+      
+      ${props => props.smallest && css`
+        border-width: 7px;
+        border-bottom-left-radius: 4px;
+      `}
       
       ${props => props.small && css`
         border-width: 10px;
@@ -40,6 +52,11 @@ const FileIconOutline = styled(FileIconNormal)`
       bottom: 8px;
       left: 8px;
       color: ${props => props.colorScheme.secondary}
+      
+      ${props => props.smallest && css`
+        left: 4px; 
+        bottom: 4px;
+      `}
     }
 `;
 

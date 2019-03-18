@@ -33,15 +33,17 @@ The following options can be used to access different designs:
 <FileIcon
     extension="doc"                 # only the first 5 characters are displayed
     colorScheme={ColorScheme.red}   # must be in the above format
+    background="#fff"               # use to pass your background color to the component
     linearGradient                  # switches the component to the gradient design
     outline                         # switches the component to the outline design
+    smallest                        # activates the smallest design
     small                           # activates the small design
     medium                          # activates the medium design
 />
 ```
 
 Properties of the designs should only be used in the combination size and type.
-If you use ```small``` and ```medium``` at the same time, ```medium``` overwrites ```small```.
+If you use ```smallest``` or ```small``` with ```medium``` at the same time, ```medium``` overwrites both.
 If you use ```outline``` and ```linearGradient``` at the same time, ```outline``` overwrites ```linearGradient```.
 
 ## Known issues
