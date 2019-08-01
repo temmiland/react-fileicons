@@ -4,7 +4,7 @@ react-fileicons is a simple and intuitive react component for visualizing file i
 
 ## Demo
 
-You can reach the Storybook [here](https://temmiland.github.io/react-fileicons/).
+You can reach the Storybook [here](https://temmiland.wtf/react-fileicons/).
 
 ## Usage
 
