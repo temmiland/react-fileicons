@@ -1,12 +1,11 @@
 {
   "name": "react-fileicons",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A React component to use file icons more flexible.",
   "main": "./dist/index.js",
   "engines": {
     "node": ">=8.0.0"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@tomxpcvx" },
   "scripts": {
     "build": "node ./node_modules/gulp/bin/gulp.js build",
     "lint": "node ./node_modules/gulp/bin/gulp.js lint",
@@ -34,16 +33,16 @@
   },
   "homepage": "https://tomxpcvx.wtf/react-fileicons",
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.5.5",
-    "@storybook/addon-info": "^5.1.11",
-    "@storybook/addon-knobs": "^5.1.11",
-    "@storybook/addon-links": "^5.1.11",
-    "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/register": "^7.7.4",
+    "@storybook/addon-info": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react": "^5.2.8",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "del": "^2.2.2",
@@ -51,7 +50,7 @@
     "eslint-config-airbnb": "^17.1.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react": "^7.17.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-eslint": "^5.0.0",
@@ -59,8 +58,8 @@
     "gulp-load-plugins": "^2.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-uglify": "^3.0.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "peerDependencies": {
     "react": "^16.4.1",
