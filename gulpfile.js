@@ -10,27 +10,27 @@ const $ = loadPlugins();
 
 // Clean up
 gulp.task('clean', (done) => {
-  del.sync(['./dist', './dist.zip']);
-  done();
+	del.sync(['./dist', './dist.zip']);
+	done();
 });
 
 // Lint
 gulp.task('lint', (done) => {
-  done();
+	done();
 
-  return gulp.src('./src/index.js')
-    .pipe($.plumber())
-    .pipe($.eslint())
-    .pipe($.eslint.format())
-    .pipe($.eslint.failOnError());
+	return gulp.src('./src/index.js')
+		.pipe($.plumber())
+		.pipe($.eslint())
+		.pipe($.eslint.format())
+		.pipe($.eslint.failOnError());
 });
 
 // Build
 gulp.task('build', gulp.series('lint', 'clean', (done) => {
-  done();
+	done();
 
-  return gulp.src('./src/**/*')
-    .pipe($.babel()) // this will also handle react transformations
-    .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulp.dest('./dist'));
+	return gulp.src('./src/**/*')
+		.pipe($.babel()) // this will also handle react transformations
+		.pipe(gulpIf('*.js', uglify()))
+		.pipe(gulp.dest('./dist'));
 }));
