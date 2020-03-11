@@ -1,4 +1,5 @@
 # react-fileicons - [![npm](https://img.shields.io/npm/v/react-fileicons.svg?color=%2345bf17&style=popout)](https://www.npmjs.com/package/react-fileicons) [![Build Status](https://travis-ci.com/tomxpcvx/react-fileicons.svg?branch=master)](https://travis-ci.com/tomxpcvx/react-fileicons)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftomxpcvx%2Freact-fileicons.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftomxpcvx%2Freact-fileicons?ref=badge_shield)
 
 react-fileicons is a simple and intuitive react component for visualizing file icons.
 
@@ -73,3 +74,6 @@ If you make any changes or improvements to this project, please make a pull requ
 ## License
 
 react-fileicons is licensed under the MIT license. Please see [LICENSE.md](https://github.com/tomxpcvx/react-fileicons/blob/master/LICENSE.md) for more info.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftomxpcvx%2Freact-fileicons.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftomxpcvx%2Freact-fileicons?ref=badge_large)
