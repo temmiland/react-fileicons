@@ -11,22 +11,29 @@ You can reach the Storybook [here](https://tomxpcvx.wtf/react-fileicons/).
 First you should import the needed files.
 
 ```javascript
-import FileIcon, { ColorScheme } from "react-fileicons";
+import FileIcon, { ColorScheme, IconStyle } from "react-fileicons";
 ```
 
 After that you can use the FileIcon component.
 To change the color of the component, you can use the built-in color list `ColorScheme`.
 
 ```javascript
-<FileIcon extension="doc" colorScheme={ColorScheme.red} />
+<FileIcon
+    extension="doc"
+    colorScheme={ ColorScheme.red }
+    iconStyle={ IconStyle.normal }
+    size={ 100 }
+/>
 ```
 
 Alternatively, you can use your own color configurations. However, these must be in the following format.
 
 ```javascript
 <FileIcon
-	extension="doc"
-	colorScheme={{ primary: "#1E88E5", secondary: "#1976D2" }}
+    extension="doc"
+    colorScheme={{ primary: "#1E88E5", secondary: "#1976D2" }}
+    iconStyle={ IconStyle.normal }
+    size={ 100 }
 />
 ```
 
@@ -34,20 +41,36 @@ The following options can be used to access different designs:
 
 ```text
 <FileIcon
-    extension="doc"                 # only the first 4 characters are displayed
-    colorScheme={ColorScheme.red}   # must be in the above format
+    extension="doc"                 # only the first 5 characters are displayed
     background="#fff"               # use to pass your background color to the component
-    linearGradient                  # switches the component to the gradient design
-    outline                         # switches the component to the outline design
-    smallest                        # activates the smallest design
-    small                           # activates the small design
-    medium                          # activates the medium design
+    colorScheme={ColorScheme.red}   # must be in the above format
+    iconStyle={IconStyle.normal}    # normal / gradient / outline
+    size={100}                      # variable size property
 />
 ```
 
-Properties of the designs should only be used in the combination size and type.
-If you use `smallest` or `small` with `medium` at the same time, `medium` overwrites both.
-If you use `outline` and `linearGradient` at the same time, `outline` overwrites `linearGradient`.
+## Migrate from v1 to v2
+
+To migrate from v1 to v2, some props have to be changed.
+The props ``small``, ``small``, ``medium`` have been removed and the size of the icons can now be variably adjusted via the prop ``size``. The props ``linearGradient`` and ``outline`` have also been removed and the prop ``iconStyle`` is now available. This can be used with the ``IconStyle`` class as shown above. Now also 5 characters are displayed instead of only 4 characters as before.
+
+```javascript
+// v1
+<FileIcon
+    extension="doc"
+    colorScheme={ColorScheme.red}
+    gradient
+    medium
+/>
+
+// v2
+<FileIcon
+    extension="doc"
+    colorScheme={ColorScheme.red}
+    iconStyle={ IconStyle.gradient }
+    size={ 100 }
+/>
+```
 
 ## Known issues
 

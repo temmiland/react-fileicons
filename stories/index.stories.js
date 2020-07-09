@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { select, text } from '@storybook/addon-knobs';
-import FileIcon from '../src';
+import FileIcon, { IconStyle } from '../src';
 import ColorScheme from '../src/ColorScheme';
 
 storiesOf('FileIcon', module)
@@ -12,10 +12,30 @@ storiesOf('FileIcon', module)
 
 		return (
 			<div>
-				<FileIcon extension={extension} colorScheme={color} smallest />
-				<FileIcon extension={extension} colorScheme={color} small />
-				<FileIcon extension={extension} colorScheme={color} medium />
-				<FileIcon extension={extension} colorScheme={color} />
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.normal }
+					size={ 30 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.normal }
+					size={ 60 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.normal }
+					size={ 90 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.normal }
+					size={ 120 }
+				/>
 			</div>
 		);
 	})
@@ -25,10 +45,30 @@ storiesOf('FileIcon', module)
 
 		return (
 			<div>
-				<FileIcon extension={extension} colorScheme={color} linearGradient smallest />
-				<FileIcon extension={extension} colorScheme={color} linearGradient small />
-				<FileIcon extension={extension} colorScheme={color} linearGradient medium />
-				<FileIcon extension={extension} colorScheme={color} linearGradient />
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.gradient }
+					size={ 30 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.gradient }
+					size={ 60 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.gradient }
+					size={ 90 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.gradient }
+					size={ 120 }
+				/>
 			</div>
 		);
 	})
@@ -38,10 +78,30 @@ storiesOf('FileIcon', module)
 
 		return (
 			<div>
-				<FileIcon extension={extension} colorScheme={color} outline smallest />
-				<FileIcon extension={extension} colorScheme={color} outline small />
-				<FileIcon extension={extension} colorScheme={color} outline medium />
-				<FileIcon extension={extension} colorScheme={color} outline />
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.outline }
+					size={ 30 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.outline }
+					size={ 60 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.outline }
+					size={ 90 }
+				/>
+				<FileIcon
+					extension={ extension }
+					colorScheme={ color }
+					iconStyle={ IconStyle.outline }
+					size={ 120 }
+				/>
 			</div>
 		);
 	});
