@@ -3,7 +3,6 @@ const gulp = require('gulp');
 const loadPlugins = require('gulp-load-plugins');
 const uglify = require('gulp-uglify');
 const gulpIf = require('gulp-if');
-// require("@babel/register");
 
 // Load all of our Gulp plugins
 const $ = loadPlugins();
