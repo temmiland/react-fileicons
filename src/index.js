@@ -2,30 +2,27 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'typeface-roboto';
 
-import FileIconNormal from './components/FileIconNormal';
-import FileIconLinearGradient from './components/FileIconLinearGradient';
-import FileIconOutline from './components/FileIconOutline';
+import FileIconBase from './components/FileIconBase';
+import FileIconContainer from './components/FileIconContainer';
 import ColorScheme from './ColorScheme';
+import IconStyle from './IconStyle';
 
 class FileIcon extends React.PureComponent {
 	render() {
 		const { props } = this;
 		return (
-			props.outline
-				? <FileIconOutline {...props} />
-				: props.linearGradient
-					? <FileIconLinearGradient {...props} />
-					: <FileIconNormal {...props} />
+			<FileIconContainer size={ props.size }>
+				<FileIconBase { ...props } />
+			</FileIconContainer>
 		);
 	}
 }
 
 FileIcon.defaultProps = {
-	linearGradient: false,
-	outline: false,
-	smallest: false,
-	small: false,
-	medium: false,
+	extension: 'js',
+	colorScheme: ColorScheme.lightBlue,
+	iconStyle: IconStyle.normal,
+	size: 50,
 	background: '#fff'
 };
 
@@ -35,15 +32,13 @@ FileIcon.propTypes = {
 		primary: PropTypes.string.isRequired,
 		secondary: PropTypes.string.isRequired
 	}).isRequired,
-	linearGradient: PropTypes.bool,
-	outline: PropTypes.bool,
-	smallest: PropTypes.bool,
-	small: PropTypes.bool,
-	medium: PropTypes.bool,
+	iconStyle: PropTypes.string.isRequired,
+	size: PropTypes.number.isRequired,
 	background: PropTypes.string
 };
 
 export {
 	ColorScheme,
+	IconStyle,
 	FileIcon as default
 };
