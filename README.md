@@ -43,22 +43,23 @@ The following options can be used to access different designs:
 <FileIcon
     extension="doc"                 # only the first 5 characters are displayed
     background="#fff"               # use to pass your background color to the component
-    colorScheme={ColorScheme.red}   # must be in the above format
-    iconStyle={IconStyle.normal}    # normal / gradient / outline
-    size={100}                      # variable size property
+    colorScheme={ ColorScheme.red } # must be in the above format
+    iconStyle={ IconStyle.normal }  # normal / gradient / outline
+    size={ 100 }                    # variable size property
+    fontSize={ 100 }                # optional, use to change font size independent size property
 />
 ```
 
 ## Migrate from v1 to v2
 
 To migrate from v1 to v2, some props have to be changed.
-The props ``small``, ``small``, ``medium`` have been removed and the size of the icons can now be variably adjusted via the prop ``size``. The props ``linearGradient`` and ``outline`` have also been removed and the prop ``iconStyle`` is now available. This can be used with the ``IconStyle`` class as shown above. Now also 5 characters are displayed instead of only 4 characters as before.
+The props ``smallest``, ``small``, ``medium`` have been removed and the size of the icons can now be variably adjusted via the prop ``size``. The props ``linearGradient`` and ``outline`` have also been removed and the prop ``iconStyle`` is now available. This can be used with the ``IconStyle`` class as shown above. If you want to customize the fontSize use ``fontSize`` property. Now also 5 characters are displayed instead of only 4 characters as before.
 
 ```javascript
 // v1
 <FileIcon
     extension="doc"
-    colorScheme={ColorScheme.red}
+    colorScheme={ ColorScheme.red }
     gradient
     medium
 />
@@ -66,7 +67,7 @@ The props ``small``, ``small``, ``medium`` have been removed and the size of the
 // v2
 <FileIcon
     extension="doc"
-    colorScheme={ColorScheme.red}
+    colorScheme={ ColorScheme.red }
     iconStyle={ IconStyle.gradient }
     size={ 100 }
 />
