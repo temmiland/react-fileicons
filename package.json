@@ -1,6 +1,6 @@
 {
 	"name": "react-fileicons",
-	"version": "2.0.2",
+	"version": "2.0.4",
 	"description": "A React component to use file icons more flexible.",
 	"main": "./dist/index.js",
 	"engines": {
@@ -33,7 +33,7 @@
 	},
 	"homepage": "https://tomxpcvx.wtf/react-fileicons",
 	"devDependencies": {
-		"@babel/core": "^7.11.1",
+		"@babel/core": "^7.11.4",
 		"@babel/plugin-proposal-object-rest-spread": "^7.11.0",
 		"@babel/preset-env": "^7.11.0",
 		"@babel/preset-react": "^7.10.4",
@@ -49,12 +49,12 @@
 		"eslint-config-airbnb": "^17.1.1",
 		"eslint-plugin-import": "^2.22.0",
 		"eslint-plugin-jsx-a11y": "^6.3.1",
-		"eslint-plugin-react": "^7.20.5",
+		"eslint-plugin-react": "^7.20.6",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-eslint": "^6.0.0",
 		"gulp-if": "^2.0.2",
-		"gulp-load-plugins": "^2.0.3",
+		"gulp-load-plugins": "^2.0.4",
 		"gulp-plumber": "^1.2.1",
 		"gulp-uglify": "^3.0.2",
 		"husky": "^4.2.5",
