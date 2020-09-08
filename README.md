@@ -89,14 +89,14 @@ If you make any changes or improvements to this project, please make a pull requ
 
 ## Thanks to ❤
 
--   React
--   Storybook
--   styled components
--   Material UI Colors
+- React
+- Storybook
+- styled components
+- Material UI Colors
 
 ## License
 
-react-fileicons is licensed under the MIT license. Please see [LICENSE.md](https://github.com/tomxpcvx/react-fileicons/blob/master/LICENSE.md) for more info.
+react-fileicons is licensed under the MIT license. Please see [LICENSE.md](https://github.com/tomxpcvx/react-fileicons/blob/main/LICENSE.md) for more info.
 
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftomxpcvx%2Freact-fileicons.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftomxpcvx%2Freact-fileicons?ref=badge_large)
