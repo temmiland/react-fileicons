@@ -1,6 +1,6 @@
 {
 	"name": "react-fileicons",
-	"version": "2.0.5",
+	"version": "2.0.6",
 	"description": "A React component to use file icons more flexible.",
 	"main": "./dist/index.js",
 	"engines": {
