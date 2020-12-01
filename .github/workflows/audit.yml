@@ -1,8 +1,9 @@
 name: npm audit
 
 on:
+    workflow_dispatch:
     schedule:
-        - cron: "0 0 * * 5"
+        - cron: "00 00 * * *"
     pull_request:
         branches:
             - main
@@ -12,10 +13,10 @@ jobs:
         name: npm audit
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/checkout@v2.3.4
             - name: install dependencies
               run: npm ci
-            - uses: oke-py/npm-audit-action@v1.5.0
+            - uses: oke-py/npm-audit-action@v1.6.0
               with:
                   github_token: ${{ secrets.ACCESS_TOKEN }}
                   issue_assignees: tomxpcvx
