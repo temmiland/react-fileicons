@@ -1,6 +1,6 @@
 {
 	"name": "react-fileicons",
-	"version": "2.0.6",
+	"version": "2.1.0",
 	"description": "A React component to use file icons more flexible.",
 	"main": "./dist/index.js",
 	"engines": {
@@ -33,43 +33,43 @@
 	},
 	"homepage": "https://tomxpcvx.wtf/react-fileicons",
 	"devDependencies": {
-		"@babel/core": "^7.11.4",
-		"@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-		"@babel/preset-env": "^7.11.0",
-		"@babel/preset-react": "^7.10.4",
-		"@babel/register": "^7.10.5",
-		"@storybook/addon-knobs": "^5.3.19",
-		"@storybook/addon-links": "^5.3.19",
-		"@storybook/addons": "^5.3.19",
-		"@storybook/react": "^5.3.19",
+		"@babel/core": "^7.12.10",
+		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+		"@babel/preset-env": "^7.12.10",
+		"@babel/preset-react": "^7.12.10",
+		"@babel/register": "^7.12.10",
+		"@storybook/addon-knobs": "^6.1.10",
+		"@storybook/addon-links": "^6.1.10",
+		"@storybook/addons": "^6.1.10",
+		"@storybook/react": "^6.1.10",
 		"babel-eslint": "^10.1.0",
-		"babel-loader": "^8.1.0",
+		"babel-loader": "^8.2.2",
 		"del": "^2.2.2",
-		"eslint": "^6.8.0",
-		"eslint-config-airbnb": "^17.1.1",
-		"eslint-plugin-import": "^2.22.0",
-		"eslint-plugin-jsx-a11y": "^6.3.1",
-		"eslint-plugin-react": "^7.20.6",
+		"eslint": "^7.15.0",
+		"eslint-config-airbnb": "^18.2.1",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-react": "^7.21.5",
 		"gulp": "^4.0.2",
 		"gulp-babel": "^8.0.0",
 		"gulp-eslint": "^6.0.0",
 		"gulp-if": "^2.0.2",
-		"gulp-load-plugins": "^2.0.4",
+		"gulp-load-plugins": "^2.0.6",
 		"gulp-plumber": "^1.2.1",
 		"gulp-uglify": "^3.0.2",
-		"husky": "^4.2.5",
-		"lint-staged": "^10.2.11",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1"
+		"husky": "^4.3.5",
+		"lint-staged": "^10.5.3",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1"
 	},
 	"peerDependencies": {
-		"react": "^16.4.1",
-		"react-dom": "^16.4.1"
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1"
 	},
 	"dependencies": {
-		"prop-types": "^15.5.8",
-		"styled-components": "^4.4.1",
-		"typeface-roboto": "0.0.54"
+		"prop-types": "^15.7.2",
+		"styled-components": "^5.2.1",
+		"typeface-roboto": "1.1.13"
 	},
 	"husky": {
 		"hooks": {
