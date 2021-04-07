@@ -1,6 +1,6 @@
 {
 	"name": "react-fileicons",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "A React component to use file icons more flexible.",
 	"main": "./dist/index.js",
 	"engines": {
@@ -59,15 +59,13 @@
 		"gulp-uglify": "^3.0.2",
 		"husky": "^4.3.5",
 		"lint-staged": "^10.5.3",
-		"react": "^17.0.1",
-		"react-dom": "^17.0.1"
-	},
-	"peerDependencies": {
-		"react": "^17.0.1",
-		"react-dom": "^17.0.1"
+		"react": "^16.13",
+		"react-dom": "^16.13"
 	},
 	"dependencies": {
 		"prop-types": "^15.7.2",
+		"react": "^16.13",
+		"react-dom": "^16.13",
 		"styled-components": "^5.2.1",
 		"typeface-roboto": "1.1.13"
 	},
