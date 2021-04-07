@@ -1,33 +1,32 @@
 name: Node CI
 
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [14.x]
-
+        node-version:
+          - 14.x
+          - 15.x
     steps:
-    - uses: actions/checkout@v2.3.4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1.4.4
-      with:
-        node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v2.3.4
 
-    - name: npm install, build, and test
-      run: |
-        npm ci
-        npm run build-storybook
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: storybook-static
-      env:
-        CI: true
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1.4.4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: npm install, build, and test
+        run: |
+          npm ci
+          npm run build-storybook
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: storybook-static
+        env:
+          CI: true
