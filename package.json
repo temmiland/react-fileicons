@@ -31,7 +31,7 @@
 	"bugs": {
 		"url": "https://github.com/temmiland/react-fileicons/issues"
 	},
-	"homepage": "https://temmiland.wtf/react-fileicons",
+	"homepage": "https://temmiland.dev/react-fileicons",
 	"devDependencies": {
 		"@babel/core": "^7.12.10",
 		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
