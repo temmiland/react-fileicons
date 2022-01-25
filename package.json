@@ -31,7 +31,7 @@
 	"bugs": {
 		"url": "https://github.com/tomxpcvx/react-fileicons/issues"
 	},
-	"homepage": "https://tomxpcvx.wtf/react-fileicons",
+	"homepage": "https://tomxpcvx.dev/react-fileicons",
 	"devDependencies": {
 		"@babel/core": "^7.12.10",
 		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
