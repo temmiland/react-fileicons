@@ -1,0 +1,66 @@
+{
+	"name": "react-fileicons",
+	"version": "2.2.4",
+	"description": "A React component to use file icons more flexible.",
+	"author": "tomxpcvx",
+	"keywords": [
+		"react",
+		"fileicons",
+		"file",
+		"icons"
+	],
+	"private": false,
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tomxpcvx/react-fileicons.git"
+	},
+	"dependencies": {
+		"@babel/polyfill": "^7.12.1",
+		"@testing-library/jest-dom": "^5.16.1",
+		"@testing-library/react": "^12.1.2",
+		"@testing-library/user-event": "^13.5.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "5.0.0",
+		"styled-components": "^5.3.3",
+		"typeface-roboto": "^1.1.13",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.16.8",
+		"@babel/core": "^7.16.12",
+		"@babel/preset-env": "^7.16.11",
+		"prop-types": "^15.8.1"
+	}
+}
