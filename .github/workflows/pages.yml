@@ -8,26 +8,26 @@ jobs:
     strategy:
       matrix:
         node-version:
+          - 15.x
           - 16.x
-          - 17.x
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.4.0
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1.4.4
+        uses: actions/setup-node@v2.5.1
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: npm install, build, and test
         run: |
           cd react-fileicons
-          npm install
+          npm ci
           npm run build
           cd ../storybook
-          npm install
+          npm ci
           npm run build-storybook
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
