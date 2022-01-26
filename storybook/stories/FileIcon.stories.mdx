@@ -1,0 +1,117 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import FileIcon, { ColorScheme, IconStyle } from "react-fileicons";
+
+<Meta
+	title='react-fileicons/FileIcon'
+	component={ FileIcon }
+	argTypes={{
+		extension: {
+			name: 'extension',
+			description: 'Extension',
+			table: {
+				type: {
+					summary: 'string',
+					detail: '<string>{0,5}'
+				}
+			}
+		},
+		colorScheme: {
+			name: 'colorScheme',
+			description: 'Color scheme',
+			options: ColorScheme,
+			control: {type: 'select'},
+			table: {
+				type: {
+					summary: 'object',
+					detail: '{ primary: "#039BE5", secondary: "#0288D1" } or ColorScheme.lightBlue'
+				}
+			}
+		},
+		iconStyle: {
+			name: 'iconStyle',
+			description: 'Icon style',
+			options: IconStyle,
+			control: {type: 'radio'},
+			table: {
+				type: {
+					summary: 'string',
+					detail: '[ normal | gradient | outline ] or IconStyle.normal'
+				}
+			}
+		},
+		size: {
+			name: 'size',
+			description: 'Size of the fileicon, autoscales font',
+			control: {type: 'number'},
+			table: {
+				type: {
+					summary: 'number',
+					detail: '100'
+				}
+			}
+		},
+		background: {
+			name: 'background',
+			description: 'Background color behind the fileicon as hexcode',
+			table: {
+				type: {
+					summary: 'string',
+					detail: '#ffffff'
+				}
+			}
+		},
+		fontSize: {
+			name: 'fontSize',
+			description: 'Size of the font, optional parameter',
+			control: {type: 'number'},
+			table: {
+				type: {
+					summary: 'number',
+					detail: '0'
+				}
+			}
+		}
+	}}
+/>
+
+export const StoryFileIcon = (args) => (
+	<>
+		<h1>Welcome to storybook</h1>
+		<p><code>react-fileicons</code> is a simple and intuitive react component for visualizing file icons.</p>
+		<p>If the configuration options are not displayed, they can be displayed by pressing D.</p>
+		<br/>
+		<FileIcon {...args} />
+	</>
+);
+
+<Canvas>
+	<Story
+		name='FileIcon'
+		args={{
+			extension: 'js',
+			colorScheme: ColorScheme.lightBlue,
+			iconStyle: IconStyle.normal,
+			size: 80,
+			background: '#fff',
+			fontSize: 0
+		}}
+		parameters={
+			{
+				docs: {
+					source: {
+						code: '<FileIcon {\n'
+						+ '    extension: "js",\n'
+						+ '    colorScheme: ColorScheme.lightBlue,\n'
+						+ '    iconStyle: IconStyle.normal,\n'
+						+ '    size: 80,\n'
+						+ '    background: "#fff",\n'
+						+ '    fontSize: 0\n'
+						+ '} />\n'
+					}
+				}
+			}
+		}
+	>
+		{ StoryFileIcon.bind({}) }
+	</Story>
+</Canvas>

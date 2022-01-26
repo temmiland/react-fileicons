@@ -15,7 +15,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2.3.4
             - name: install dependencies
-              run: npm ci
+              run: cd react-fileicons && npm ci
             - uses: oke-py/npm-audit-action@v1.6.0
               with:
                   github_token: ${{ secrets.ACCESS_TOKEN }}

@@ -8,8 +8,8 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 14.x
-          - 15.x
+          - 16.x
+          - 17.x
     steps:
       - uses: actions/checkout@v2.3.4
 
@@ -20,13 +20,17 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm ci
+          cd react-fileicons
+          npm install
+          npm run build
+          cd ../storybook
+          npm install
           npm run build-storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: storybook-static
+          FOLDER: storybook/storybook-static
         env:
           CI: true

@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import 'typeface-roboto';
 
-import FileIconBase from './components/FileIconBase';
-import FileIconContainer from './components/FileIconContainer';
-import ColorScheme from './ColorScheme';
-import IconStyle from './IconStyle';
+import FileIconBase from './FileIconBase';
+import FileIconContainer from './FileIconContainer';
+import ColorScheme from '../helpers/ColorScheme';
+import IconStyle from '../helpers/IconStyle';
 
 class FileIcon extends React.PureComponent {
 	render() {
@@ -23,7 +23,8 @@ FileIcon.defaultProps = {
 	colorScheme: ColorScheme.lightBlue,
 	iconStyle: IconStyle.normal,
 	size: 50,
-	background: '#fff'
+	background: '#fff',
+	fontSize: 0
 };
 
 FileIcon.propTypes = {
@@ -34,11 +35,8 @@ FileIcon.propTypes = {
 	}).isRequired,
 	iconStyle: PropTypes.string.isRequired,
 	size: PropTypes.number.isRequired,
-	background: PropTypes.string
+	background: PropTypes.string,
+	fontSize: PropTypes.number
 };
 
-export {
-	ColorScheme,
-	IconStyle,
-	FileIcon as default
-};
+export default FileIcon;
