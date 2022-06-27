@@ -41,7 +41,7 @@ The following options can be used to access different designs:
 
 ```text
 <FileIcon
-    extension="doc"                 # only the first 5 characters are displayed
+    extension="doc"                 # more than 5 chars can require another fontSize
     background="#fff"               # use to pass your background color to the component
     colorScheme={ ColorScheme.red } # must be in the above format
     iconStyle={ IconStyle.normal }  # normal / gradient / outline
@@ -53,7 +53,7 @@ The following options can be used to access different designs:
 ## Migrate from v1 to v2
 
 To migrate from v1 to v2, some props have to be changed.
-The props ``smallest``, ``small``, ``medium`` have been removed and the size of the icons can now be variably adjusted via the prop ``size``. The props ``linearGradient`` and ``outline`` have also been removed and the prop ``iconStyle`` is now available. This can be used with the ``IconStyle`` class as shown above. If you want to customize the fontSize use ``fontSize`` property. Now also 5 characters are displayed instead of only 4 characters as before.
+The props ``smallest``, ``small``, ``medium`` have been removed and the size of the icons can now be variably adjusted via the prop ``size``. The props ``linearGradient`` and ``outline`` have also been removed and the prop ``iconStyle`` is now available. This can be used with the ``IconStyle`` class as shown above. If you want to customize the fontSize use ``fontSize`` property. Now all characters are displayed instead of only 4 characters as before.
 
 ```javascript
 // v1
