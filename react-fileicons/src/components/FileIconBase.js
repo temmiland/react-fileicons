@@ -14,7 +14,7 @@ const FileIconBase = styled.div`
 	};
 	background: ${
 		props => props.iconStyle === IconStyle.gradient
-			? `linear-gradient(to bottom, ${props.colorScheme.primary} 0%, 
+			? `linear-gradient(to bottom, ${props.colorScheme.primary} 0%,
 					${props.colorScheme.secondary} 100%)`
 			: props.iconStyle === IconStyle.outline
 				? 'none'
@@ -32,7 +32,7 @@ const FileIconBase = styled.div`
 			? props.colorScheme.primary
 			: '#fff'
 	};
-	
+
 	&:before {
 		position: absolute;
 		top: ${
@@ -64,7 +64,7 @@ const FileIconBase = styled.div`
 		position: absolute;
 		bottom: ${props => props.size / 100 * 10}px;
 		left: ${props => props.size / 100 * 10}px;
-		content: "${props => props.extension.substring(0, 5)}";
+		content: "${props => props.extension}";
 	}
 `;
 
