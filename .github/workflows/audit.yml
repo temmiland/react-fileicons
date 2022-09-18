@@ -1,4 +1,4 @@
-name: npm audit
+name: Auditing
 
 on:
     workflow_dispatch:
@@ -13,11 +13,13 @@ jobs:
         name: npm audit
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2.3.4
+            - uses: actions/checkout@v3.0.2
             - name: install dependencies
               run: cd react-fileicons && npm ci
-            - uses: oke-py/npm-audit-action@v1.6.0
+            - uses: oke-py/npm-audit-action@v2.3.0
               with:
-                  github_token: ${{ secrets.ACCESS_TOKEN }}
-                  issue_assignees: tomxpcvx
-                  issue_labels: vulnerability
+                dedupe_issues: true
+                working_directory: react-fileicons
+                github_token: ${{ secrets.ACCESS_TOKEN }}
+                issue_assignees: tomxpcvx
+                issue_labels: vulnerability
