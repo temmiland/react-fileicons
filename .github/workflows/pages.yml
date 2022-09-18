@@ -20,7 +20,6 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          unset NODE_OPTIONS
           cd react-fileicons
           npm ci
           npm run build

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	"preinstall": "npx force-resolutions",
+    "preinstall": "npx force-resolutions",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -35,14 +35,16 @@
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/react": "^6.5.12",
     "babel-loader": "^8.2.3",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-polyfill-corejs3": "^0.5.1",
     "core-js": "^3.20.3",
+    "glob-parent": "^6.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "glob-parent": "^6.0.2",
     "trim": "^1.0.1",
     "trim-newlines": "^4.0.2"
   },
