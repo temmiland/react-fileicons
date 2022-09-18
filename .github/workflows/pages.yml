@@ -4,13 +4,12 @@ on: [push, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version:
-          - 15.x
           - 16.x
-          - 17.x
+          - 18.x
     steps:
       - uses: actions/checkout@v3.0.2
 
@@ -21,6 +20,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          unset NODE_OPTIONS
           cd react-fileicons
           npm ci
           npm run build
