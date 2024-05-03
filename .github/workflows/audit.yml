@@ -21,5 +21,5 @@ jobs:
                 dedupe_issues: true
                 working_directory: react-fileicons
                 github_token: ${{ secrets.ACCESS_TOKEN }}
-                issue_assignees: tomxpcvx
+                issue_assignees: temmiland
                 issue_labels: vulnerability

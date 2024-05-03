@@ -2,7 +2,7 @@
 	"name": "react-fileicons",
 	"version": "2.2.13",
 	"description": "A React component to use file icons more flexible.",
-	"author": "tomxpcvx",
+	"author": "temmiland",
 	"keywords": [
 		"react",
 		"fileicons",
@@ -19,7 +19,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/tomxpcvx/react-fileicons.git"
+		"url": "git+https://github.com/temmiland/react-fileicons.git"
 	},
 	"dependencies": {
 		"react": "^17.0.2",
