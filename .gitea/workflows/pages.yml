@@ -38,10 +38,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      # persist-credentials stays at its default (true) here, unlike the
+      # build job, because the Deploy step below pushes to origin using the
+      # credentials checkout already configured.
       - name: Checkout repository
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-        with:
-          persist-credentials: false
 
       - name: Use Node.js 24.x
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -57,13 +58,25 @@ jobs:
           npm ci
           npm run build-storybook
 
+      # Pushed with plain git instead of JamesIves/github-pages-deploy-action:
+      # that action needs rsync (missing on the runner image) and re-derives
+      # the remote URL as https on port 3000, which doesn't terminate TLS on
+      # this instance. Reusing checkout's own origin remote sidesteps both.
       # Needs the repo's Actions setting "Read and write permissions" enabled
       # so the built-in token can push the gh-pages branch.
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@d92aa235d04922e8f08b40ce78cc5442fcfbfa2f # v4.8.0
-        with:
-          token: ${{ secrets.GITEA_TOKEN }}
-          branch: gh-pages
-          folder: storybook/storybook-static
+      - name: Deploy storybook to gh-pages
         env:
-          CI: true
+          SOURCE_SHA: ${{ gitea.sha }}
+        run: |
+          rm -rf /tmp/gh-pages-build
+          cp -r storybook/storybook-static /tmp/gh-pages-build
+
+          git config user.name "Temmi Pietsch"
+          git config user.email "welcome@temmi.land"
+
+          git checkout --orphan gh-pages-deploy
+          git rm -rf . > /dev/null
+          cp -r /tmp/gh-pages-build/. .
+          git add -A
+          git commit -m "🚀 Deployed storybook (${SOURCE_SHA:0:7})"
+          git push origin gh-pages-deploy:gh-pages --force
