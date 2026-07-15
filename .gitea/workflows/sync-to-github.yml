@@ -1,0 +1,37 @@
+name: Sync to GitHub
+
+on:
+    push:
+        branches:
+            - main
+            - gh-pages
+
+concurrency:
+    group: sync-to-github
+    cancel-in-progress: false
+
+permissions:
+    contents: read
+
+jobs:
+    mirror:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+              with:
+                  fetch-depth: 0
+                  persist-credentials: false
+
+            # Checkout only fetches the ref that triggered the run, so both
+            # branches are fetched explicitly to keep them in sync on every
+            # push regardless of which one changed.
+            - name: Fetch main and gh-pages
+              run: git fetch origin main gh-pages
+
+            - name: Push main and gh-pages to GitHub
+              env:
+                  GH_PAT: ${{ secrets.GH_PAT }}
+              run: |
+                  git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" \
+                      origin/main:main origin/gh-pages:gh-pages
