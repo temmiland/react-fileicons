@@ -8,9 +8,9 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 16.x
-          - 18.x
-          - 20.x
+          - 22.x
+          - 24.x
+          - 26.x
     steps:
       - uses: actions/checkout@v3.5.3
 
@@ -27,11 +27,32 @@ jobs:
           cd ../storybook
           npm ci
           npm run build-storybook
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.3
+
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v3.7.0
+        with:
+          node-version: 24.x
+
+      - name: npm install and build
+        run: |
+          cd react-fileicons
+          npm ci
+          npm run build
+          cd ../storybook
+          npm ci
+          npm run build-storybook
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: storybook/storybook-static
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages
+          folder: storybook/storybook-static
         env:
           CI: true
