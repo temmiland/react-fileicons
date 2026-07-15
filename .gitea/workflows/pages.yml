@@ -38,9 +38,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      # persist-credentials stays at its default (true) here, unlike the
-      # build job, because the Deploy step below pushes to origin using the
-      # credentials checkout already configured.
       - name: Checkout repository
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
@@ -58,12 +55,6 @@ jobs:
           npm ci
           npm run build-storybook
 
-      # Pushed with plain git instead of JamesIves/github-pages-deploy-action:
-      # that action needs rsync (missing on the runner image) and re-derives
-      # the remote URL as https on port 3000, which doesn't terminate TLS on
-      # this instance. Reusing checkout's own origin remote sidesteps both.
-      # Needs the repo's Actions setting "Read and write permissions" enabled
-      # so the built-in token can push the gh-pages branch.
       - name: Deploy storybook to gh-pages
         env:
           SOURCE_SHA: ${{ gitea.sha }}
@@ -77,6 +68,14 @@ jobs:
           git checkout --orphan gh-pages-deploy
           git rm -rf . > /dev/null
           cp -r /tmp/gh-pages-build/. .
+          touch .nojekyll
           git add -A
           git commit -m "🚀 Deployed storybook (${SOURCE_SHA:0:7})"
           git push origin gh-pages-deploy:gh-pages --force
+
+      - name: Push gh-pages to GitHub
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" \
+              gh-pages-deploy:gh-pages --force
