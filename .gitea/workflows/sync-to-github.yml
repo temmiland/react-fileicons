@@ -33,4 +33,4 @@ jobs:
                   GH_PAT: ${{ secrets.GH_PAT }}
               run: |
                   git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" \
-                      origin/main:main origin/gh-pages:gh-pages
+                      origin/main:main origin/gh-pages:gh-pages -f
