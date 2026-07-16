@@ -1,89 +1,89 @@
 name: Node CI
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
 
 concurrency:
-  group: pages-deploy
-  cancel-in-progress: false
+    group: pages-deploy
+    cancel-in-progress: false
 
 permissions:
-  contents: write
+    contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 22.x
-          - 24.x
-          - 26.x
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
-        with:
-          persist-credentials: false
+    build:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version:
+                    - 22.x
+                    - 24.x
+                    - 26.x
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+              with:
+                  persist-credentials: false
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: ${{ matrix.node-version }}
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: npm install, build, and test
-        run: |
-          cd react-fileicons
-          npm ci
-          npm run build
-          cd ../storybook
-          npm ci
-          npm run build-storybook
+            - name: npm install, build, and test
+              run: |
+                  cd react-fileicons
+                  npm ci
+                  npm run build
+                  cd ../storybook
+                  npm ci
+                  npm run build-storybook
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
 
-      - name: Use Node.js 24.x
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 24.x
+            - name: Use Node.js 24.x
+              uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+              with:
+                  node-version: 24.x
 
-      - name: npm install and build
-        run: |
-          cd react-fileicons
-          npm ci
-          npm run build
-          cd ../storybook
-          npm ci
-          npm run build-storybook
+            - name: npm install and build
+              run: |
+                  cd react-fileicons
+                  npm ci
+                  npm run build
+                  cd ../storybook
+                  npm ci
+                  npm run build-storybook
 
-      - name: Deploy storybook to gh-pages
-        env:
-          SOURCE_SHA: ${{ gitea.sha }}
-        run: |
-          rm -rf /tmp/gh-pages-build
-          cp -r storybook/storybook-static /tmp/gh-pages-build
+            - name: Deploy storybook to gh-pages
+              env:
+                  SOURCE_SHA: ${{ gitea.sha }}
+              run: |
+                  rm -rf /tmp/gh-pages-build
+                  cp -r storybook/storybook-static /tmp/gh-pages-build
 
-          git config user.name "Temmi Pietsch"
-          git config user.email "welcome@temmi.land"
+                  git config user.name "Temmi Pietsch"
+                  git config user.email "welcome@temmi.land"
 
-          git checkout --orphan gh-pages-deploy
-          git rm -rf . > /dev/null
-          cp -r /tmp/gh-pages-build/. .
-          touch .nojekyll
-          git add -A
-          git commit -m "🚀 Deployed storybook (${SOURCE_SHA:0:7})"
-          git push origin gh-pages-deploy:gh-pages --force
+                  git checkout --orphan gh-pages-deploy
+                  git rm -rf . > /dev/null
+                  cp -r /tmp/gh-pages-build/. .
+                  touch .nojekyll
+                  git add -A
+                  git commit -m "🚀 Deployed storybook (${SOURCE_SHA:0:7})"
+                  git push origin gh-pages-deploy:gh-pages --force
 
-      - name: Push gh-pages to GitHub
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: |
-          git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" \
-              gh-pages-deploy:gh-pages --force
+            - name: Push gh-pages to GitHub
+              env:
+                  GH_PAT: ${{ secrets.GH_PAT }}
+              run: |
+                  git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" \
+                      gh-pages-deploy:gh-pages --force
