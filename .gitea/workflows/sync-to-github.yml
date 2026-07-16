@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - main
+        tags:
+            - "*"
 
 concurrency:
     group: sync-to-github
@@ -19,11 +21,13 @@ jobs:
             - name: Checkout main
               uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
               with:
-                  ref: main
                   fetch-depth: 0
+                  fetch-tags: true
                   persist-credentials: false
 
-            - name: Push main to GitHub
+            - name: Push main and tags to GitHub
               env:
                   GH_PAT: ${{ secrets.GH_PAT }}
-              run: git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" main:main
+              run: |
+                  git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" origin/main:refs/heads/main
+                  git push "https://x-access-token:${GH_PAT}@github.com/temmiland/react-fileicons.git" refs/tags/*:refs/tags/*
