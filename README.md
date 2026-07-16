@@ -1,5 +1,4 @@
-# react-fileicons - [![npm](https://img.shields.io/npm/v/react-fileicons.svg?color=%2345bf17&style=popout)](https://www.npmjs.com/package/react-fileicons)
-
+# react-fileicons - [![npm](https://img.shields.io/npm/v/@temmiland/react-fileicons.svg?color=%2345bf17&style=popout)](https://www.npmjs.com/package/@temmiland/react-fileicons)
 react-fileicons is a simple and intuitive react component for visualizing file icons.
 
 ## Demo
