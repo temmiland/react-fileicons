@@ -75,6 +75,7 @@ jobs:
 
                   git checkout --orphan gh-pages-deploy
                   git rm -rf . > /dev/null
+                  git clean -fdx
                   cp -r /tmp/gh-pages-build/. .
                   touch .nojekyll
                   git add -A
