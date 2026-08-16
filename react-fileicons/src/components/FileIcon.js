@@ -10,9 +10,18 @@ import IconStyle from '../helpers/IconStyle';
 class FileIcon extends React.PureComponent {
 	render() {
 		const { props } = this;
+		// Forwarded as transient props ($-prefixed) so styled-components v6
+		// keeps them out of the rendered DOM element.
 		return (
-			<FileIconContainer size={ props.size }>
-				<FileIconBase { ...props } />
+			<FileIconContainer $size={ props.size }>
+				<FileIconBase
+					$extension={ props.extension }
+					$colorScheme={ props.colorScheme }
+					$iconStyle={ props.iconStyle }
+					$size={ props.size }
+					$background={ props.background }
+					$fontSize={ props.fontSize }
+				/>
 			</FileIconContainer>
 		);
 	}
