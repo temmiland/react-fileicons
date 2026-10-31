@@ -1,4 +1,4 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
+/** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
 	stories: [
 		"../stories/**/*.mdx",
@@ -7,7 +7,7 @@ const config = {
 	addons: [
 		"@storybook/addon-docs"
 	],
-	framework: "@storybook/react-webpack5"
+	framework: "@storybook/react-vite"
 };
 
 export default config;

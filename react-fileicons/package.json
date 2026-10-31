@@ -1,6 +1,6 @@
 {
 	"name": "@temmiland/react-fileicons",
-	"version": "2.4.1",
+	"version": "2.4.2",
 	"description": "A React component to use file icons more flexible.",
 	"author": "temmiland",
 	"keywords": [
@@ -57,5 +57,9 @@
 		"@babel/preset-env": "^8.0.2",
 		"@babel/preset-react": "^8.0.1",
 		"nth-check": "^3.0.1"
+	},
+	"overrides": {
+		"glob": "14.0.2",
+		"minimatch": "11.0.1"
 	}
 }

@@ -12,14 +12,18 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-docs": "^10.5.0",
-    "@storybook/addon-webpack5-compiler-swc": "^4.0.3",
-    "@storybook/react-webpack5": "^10.5.0",
+    "@storybook/addon-docs": "^10.6.2",
+    "@storybook/react-vite": "^10.6.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "storybook": "^10.5.0"
+    "storybook": "^10.6.2",
+    "vite": "^8.3.3"
   },
   "dependencies": {
     "react-fileicons": "../react-fileicons"
+  },
+  "overrides": {
+    "glob": "14.0.2",
+    "minimatch": "11.0.1"
   }
 }
